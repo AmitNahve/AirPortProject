@@ -1,0 +1,12 @@
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\bin\Debug\net6.0\Models.deps.json
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\bin\Debug\net6.0\Models.dll
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\bin\Debug\net6.0\Models.pdb
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.csproj.AssemblyReference.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.AssemblyInfoInputs.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.AssemblyInfo.cs
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.dll
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\refint\Models.dll
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\Models.pdb
+C:\Users\Amit\source\repos\FinalProjectAirPort\Models\obj\Debug\net6.0\ref\Models.dll

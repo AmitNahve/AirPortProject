@@ -1,0 +1,15 @@
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\bin\Debug\net6.0\AirPlaneSimulator.exe
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\bin\Debug\net6.0\AirPlaneSimulator.deps.json
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\bin\Debug\net6.0\AirPlaneSimulator.runtimeconfig.json
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\bin\Debug\net6.0\AirPlaneSimulator.dll
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\bin\Debug\net6.0\AirPlaneSimulator.pdb
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.csproj.AssemblyReference.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.AssemblyInfoInputs.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.AssemblyInfo.cs
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.csproj.CoreCompileInputs.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.dll
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\refint\AirPlaneSimulator.dll
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.pdb
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\AirPlaneSimulator.genruntimeconfig.cache
+C:\Users\Amit\source\repos\FinalProjectAirPort\AirPlaneSimulator\obj\Debug\net6.0\ref\AirPlaneSimulator.dll
