@@ -14,6 +14,7 @@ namespace Entity
         IFlightRepository? flightRepository;
         ILegRepository? legRepository;
         ILogRepository? logRepository;
+      
         public UnitOfWork(AirPortContext context)
         {
             this.context = context;
@@ -43,6 +44,8 @@ namespace Entity
                 return logRepository;
             }
         }
+
+    
 
         public void Complete()
         {

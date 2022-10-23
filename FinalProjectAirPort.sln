@@ -5,15 +5,17 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalProjectServer", "FinalProjectServer\FinalProjectServer.csproj", "{A1F8E99D-8C6F-4C4A-8FA9-F5AE3EBCDAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirPlaneSimulator", "AirPlaneSimulator\AirPlaneSimulator.csproj", "{1C0AA87C-F044-4AFA-BB3A-B015FE3D2272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirPlaneSimulator", "AirPlaneSimulator\AirPlaneSimulator.csproj", "{1C0AA87C-F044-4AFA-BB3A-B015FE3D2272}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{EC381DD8-C7E2-45F9-8BEB-689F876810BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{EC381DD8-C7E2-45F9-8BEB-689F876810BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "Contract\Contract.csproj", "{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contract", "Contract\Contract.csproj", "{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{1E5BE72D-52E0-4F15-8B7F-F113C45A289D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{1E5BE72D-52E0-4F15-8B7F-F113C45A289D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{70772950-3A46-45FA-BD09-4A7D2ED93ECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{70772950-3A46-45FA-BD09-4A7D2ED93ECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{70772950-3A46-45FA-BD09-4A7D2ED93ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70772950-3A46-45FA-BD09-4A7D2ED93ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70772950-3A46-45FA-BD09-4A7D2ED93ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

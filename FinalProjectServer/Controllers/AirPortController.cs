@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using Shared;
 
 namespace FinalProjectServer.Controllers
 {
@@ -16,16 +17,34 @@ namespace FinalProjectServer.Controllers
         }
         // GET: api/<AirPortController>
         [HttpGet]
-        public ActionResult<Flight> Get()
+        [Route("AddLandingFlight")]
+        public ActionResult<Flight> AddLandingFlight()
         {
-            return Ok(new List<Flight> { new Flight(), new Flight() });
+            airPortLogic.AddNewFlight(new Flight { Target = Target.Landing });
+            return Ok();
+        }
+        [HttpGet]
+        [Route("AddDepartureFlight")]
+        public ActionResult<Flight> AddDepartureFlight()
+        {
+            airPortLogic.AddNewFlight(new Flight { Target = Target.Departure });
+            return Ok();
+        }
+        [HttpGet]
+        [Route("GetStatus")]
+        public ActionResult<AirPortStatus> GetStatus()
+        {
+            //var stations = new AirPortStatus();
+            //stations.Stations.Add(new Leg ());
+
+            return Ok(airPortLogic.GetStatus());
         }
 
         // GET api/<AirPortController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return airPortLogic.Start();
+            return "Start";
         }
 
         // POST api/<AirPortController>

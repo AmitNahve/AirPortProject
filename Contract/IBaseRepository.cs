@@ -3,7 +3,7 @@ namespace Contract
 {
     public interface IBaseRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        Task <IEnumerable<T>> GetAll();
         T Get(int id);
         void Delete(T entity);
         void Create(T entity);

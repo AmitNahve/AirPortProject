@@ -19,9 +19,9 @@ namespace FinalProjectServer.Controllers
 
         // GET: api/<FlightController>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var flights = unitOfWork.Flights.GetAll();
+            var flights = await unitOfWork.Flights.GetAll();
             return Ok(flights);
         }
 

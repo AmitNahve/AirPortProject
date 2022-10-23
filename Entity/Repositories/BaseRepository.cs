@@ -17,9 +17,14 @@ namespace Entity.Repositories
 
         public T Get(int id) => context.Set<T>().Find(id);
 
-        public IEnumerable<T> GetAll() => context.Set<T>().ToList();
 
         public void Update(T entity) => context.Set<T>().Update(entity);
 
+        public Task<IEnumerable<T>> GetAll()
+        {
+            IEnumerable<T> list = context.Set<T>();
+           return Task.Run(()=>list);
+
+        }
     }
 }
