@@ -32,7 +32,7 @@ namespace Models
 
         public async Task Visit()
         {
-            Thread.Sleep(this.StationWatingTime * 1000);
+           await Task.Delay(this.StationWatingTime * 1000);
         }
         public void ExitStation()
         {

@@ -33,7 +33,6 @@ namespace Models
                 await leg!.EnterStation(flight);
                 Console.WriteLine($" flight in station: {leg!.Number},Flight Code:{leg!.Flight!.FlightCode}");
                 await leg.Visit();
-                Thread.Sleep(leg.StationWatingTime * 1000);
                 leg.ExitStation();
             }
 

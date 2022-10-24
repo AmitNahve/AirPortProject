@@ -14,7 +14,7 @@ namespace BL
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ILegService legService;
-      
+
 
         private readonly List<IFlight> flights = new();
         public AirPortLogic(IUnitOfWork unitOfWork, ILegService legService)
@@ -28,7 +28,7 @@ namespace BL
             //unitOfWork.Flights.Create(flight);
             //unitOfWork.Complete();
             await StartFlight(flight);
-            
+
         }
 
         private async Task StartFlight(IFlight flight)
@@ -40,8 +40,10 @@ namespace BL
             {
                 await StartLanding(stations, flight);
             }
-
-            await StartDeparture(stations, flight);
+            else
+            {
+                await StartDeparture(stations, flight);
+            }
 
 
         }
@@ -57,7 +59,7 @@ namespace BL
             var leg8 = stations.FirstOrDefault(s => s.Number == 8);
             var leg4 = stations.FirstOrDefault(s => s.Number == 4);
             var leg9 = stations.FirstOrDefault(s => s.Number == 9);
-            ICombinedStations combinedStations = new CombinedStations(new List<ILeg>{leg6!, leg7! } );
+            ICombinedStations combinedStations = new CombinedStations(new List<ILeg> { leg6!, leg7! });
             await combinedStations.VisitStation(flight);
             await RunInStation(flight, leg8);
             await RunInStation(flight, leg4);
@@ -85,10 +87,9 @@ namespace BL
 
         public async Task RunInStation(IFlight flight, ILeg? leg)
         {
-            leg?.EnterStation(flight);
-            Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight?.FlightCode}");
+            await leg!.EnterStation(flight);
+            Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight!.FlightCode}");
             await leg.Visit();
-            Thread.Sleep(leg.StationWatingTime * 1000);
             leg.ExitStation();
         }
 
