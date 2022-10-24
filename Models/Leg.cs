@@ -19,23 +19,26 @@ namespace Models
         public Target Target { get; set; }
         public int StationWatingTime { get; set; }
         public int NextLegNumber { get; set; }
-        SemaphoreSlim gate = new SemaphoreSlim(1);
+        SemaphoreSlim Gate { get; set; } = new SemaphoreSlim(0);
         public async Task EnterStation(IFlight flight)
         {
             if(Flight == null)
             Flight = flight;
             else
             {
-                await gate.WaitAsync();
-                Flight = flight;
-                gate.Release();
-
+                await Gate.WaitAsync();//close the station only for one flight
             }
         }
 
+        public async Task Visit()
+        {
+            Thread.Sleep(this.StationWatingTime * 1000);
+        }
         public void ExitStation()
         {
+            
             Flight = null;
+            Gate.Release();
         }
 
         // //Number, Capacity, Landing/Departure/Both , CrossingTime (seconds)

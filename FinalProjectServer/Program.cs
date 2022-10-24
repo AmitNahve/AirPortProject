@@ -8,12 +8,10 @@ using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddScoped<IAirPortLogic, AirPortLogic>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddSingleton<ILegService, LegService>();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 //builder.Services.AddDbContext<AirPortContext>(options => options.UseSqlServer(connectionString));

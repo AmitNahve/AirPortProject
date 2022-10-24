@@ -13,5 +13,6 @@ namespace Shared
         Target Target { get; set; }
         Task EnterStation(IFlight flight);
         void ExitStation();
+        Task Visit();
     }
 }

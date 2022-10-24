@@ -11,7 +11,7 @@ namespace Models
     {
         public List<ILeg>? Legs { get; set; } = new List<ILeg>();
 
-        public IAirPortLogic AirPort { get; set; }
+        public IAirPortLogic ? AirPort { get; set; }
 
         public IEnumerable<ILeg> GetNextStation()
         {

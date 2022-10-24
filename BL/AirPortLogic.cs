@@ -14,58 +14,57 @@ namespace BL
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ILegService legService;
-        private readonly List<IFlight> flights = new(); 
+      
+
+        private readonly List<IFlight> flights = new();
         public AirPortLogic(IUnitOfWork unitOfWork, ILegService legService)
         {
             this.unitOfWork = unitOfWork;
             this.legService = legService;
         }
 
-        public Task AddNewFlight(IFlight flight)
+        public async Task AddNewFlight(IFlight flight)
         {
             //unitOfWork.Flights.Create(flight);
             //unitOfWork.Complete();
-            StartFlight(flight);
-            return Task.CompletedTask;
-        }
-
-        private void StartFlight(IFlight flight)
-        {
-           flights.Add(flight);
-            var flightRoute = CreateRoute(flight.Target);
-            flightRoute.AirPort = this;
-            flight.Start(flightRoute);
-        }
-
-        private IFlightRoute CreateRoute( Target target)
-        {
-            var stations = legService.GetLegs();
-            var path = new FlightRoute();
-            if(target == Target.Landing)
-            {
-                return LandingRouteStarter(stations, path);
-            }
+            await StartFlight(flight);
             
-            return DepartureRouteStarter(stations, path);
+        }
+
+        private async Task StartFlight(IFlight flight)
+        {
+            flights.Add(flight);
+            var stations = legService.GetLegs();
+            // var path = new FlightRoute();
+            if (flight.Target == Target.Landing)
+            {
+                await StartLanding(stations, flight);
+            }
+
+            await StartDeparture(stations, flight);
+
 
         }
 
-        private IFlightRoute DepartureRouteStarter(IEnumerable<ILeg> stations, IFlightRoute path)
+
+
+        private async Task StartDeparture(IEnumerable<ILeg> stations, IFlight flight)
         {
+
+
             var leg6 = stations.FirstOrDefault(s => s.Number == 6);
             var leg7 = stations.FirstOrDefault(s => s.Number == 7);
             var leg8 = stations.FirstOrDefault(s => s.Number == 8);
             var leg4 = stations.FirstOrDefault(s => s.Number == 4);
             var leg9 = stations.FirstOrDefault(s => s.Number == 9);
-            path.Legs?.Add(leg6!);
-            path.Legs?.Add(leg7!);
-            path.Legs?.Add(leg8!);
-            path.Legs?.Add(leg4!);
-            path.Legs?.Add(leg9!);
-            return path;
+            ICombinedStations combinedStations = new CombinedStations(new List<ILeg>{leg6!, leg7! } );
+            await combinedStations.VisitStation(flight);
+            await RunInStation(flight, leg8);
+            await RunInStation(flight, leg4);
+            await RunInStation(flight, leg9);
+            Console.WriteLine($"flight ended. Flight Code:{flight.FlightCode}");
         }
-
-        private static IFlightRoute LandingRouteStarter(IEnumerable<ILeg> stations, IFlightRoute path)
+        private async Task StartLanding(IEnumerable<ILeg> stations, IFlight flight)
         {
             var leg1 = stations.FirstOrDefault(s => s.Number == 1);
             var leg2 = stations.FirstOrDefault(s => s.Number == 2);
@@ -74,36 +73,26 @@ namespace BL
             var leg5 = stations.FirstOrDefault(s => s.Number == 5);
             var leg6 = stations.FirstOrDefault(s => s.Number == 6);
             var leg7 = stations.FirstOrDefault(s => s.Number == 7);
-            var leg8 = stations.FirstOrDefault(s => s.Number == 8);
-            var leg9 = stations.FirstOrDefault(s => s.Number == 9);
-                path.Legs?.Add(leg1!);
-                path.Legs?.Add(leg2!);
-                path.Legs?.Add(leg3!);
-                path.Legs?.Add(leg4!);
-                path.Legs?.Add(leg5!);
-                path.Legs?.Add(leg6!);
-                path.Legs?.Add(leg7!);
-                path.Legs?.Add(leg8!);
-                path.Legs?.Add(leg9!);
-            return path;
+            await RunInStation(flight, leg1);
+            await RunInStation(flight, leg2);
+            await RunInStation(flight, leg3);
+            await RunInStation(flight, leg4);
+            await RunInStation(flight, leg5);
+            ICombinedStations combinedStations = new CombinedStations(new List<ILeg> { leg6!, leg7! });
+            await combinedStations.VisitStation(flight);
+            Console.WriteLine($"flight ended. Flight Code:{flight.FlightCode}");
         }
 
-        //public  Task<IEnumerable<Flight>> GetPendingFlightsByOrder(bool IsLanding)
-        //{
-        //    // need to order this
-        //    var flights = unitOfWork.Flights.GetAll();
-        //    return  flights;
-        //}
+        public async Task RunInStation(IFlight flight, ILeg? leg)
+        {
+            leg?.EnterStation(flight);
+            Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight?.FlightCode}");
+            await leg.Visit();
+            Thread.Sleep(leg.StationWatingTime * 1000);
+            leg.ExitStation();
+        }
 
-        //public Task StartApp()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
-        //public Task StartSimulator(int numOfFlights)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public AirPortStatus GetStatus()
         {
