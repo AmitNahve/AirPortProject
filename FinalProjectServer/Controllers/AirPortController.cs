@@ -34,9 +34,7 @@ namespace FinalProjectServer.Controllers
         [Route("GetStatus")]
         public ActionResult<AirPortStatus> GetStatus()
         {
-            //var stations = new AirPortStatus();
-            //stations.Stations.Add(new Leg ());
-
+          
             return Ok(airPortLogic.GetStatus());
         }
 
