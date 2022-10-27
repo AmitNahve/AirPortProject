@@ -15,27 +15,34 @@ namespace FinalProjectServer.Controllers
         {
             this.airPortLogic = airPortLogic;
         }
-        // GET: api/<AirPortController>
-        [HttpGet]
-        [Route("AddLandingFlight")]
-        public ActionResult<Flight> AddLandingFlight()
-        {
-            airPortLogic.AddNewFlight(new Flight { Target = Target.Landing });
-            return Ok();
-        }
-        [HttpGet]
-        [Route("AddDepartureFlight")]
-        public ActionResult<Flight> AddDepartureFlight()
-        {
-            airPortLogic.AddNewFlight(new Flight { Target = Target.Departure });
-            return Ok();
-        }
+        //// GET: api/<AirPortController>
+        //[HttpGet]
+        //[Route("AddLandingFlight")]
+        //public ActionResult<Flight> AddLandingFlight()
+        //{
+        //    airPortLogic.AddNewFlight(new Flight { Target = Target.Landing });
+        //    return Ok();
+        //}
+        //[HttpGet]
+        //[Route("AddDepartureFlight")]
+        //public ActionResult<Flight> AddDepartureFlight()
+        //{
+        //    airPortLogic.AddNewFlight(new Flight { Target = Target.Departure });
+        //    return Ok();
+        //}
         [HttpGet]
         [Route("GetStatus")]
-        public ActionResult<AirPortStatus> GetStatus()
+        public List<LegStatus> GetStatus()
         {
           
-            return Ok(airPortLogic.GetStatus());
+            return airPortLogic.GetStatus();
+        }
+        [HttpGet]
+        [Route("GetFlights")]
+        public List<IFlight> GetFlights()
+        {
+          
+            return airPortLogic.GetFlights();
         }
 
         // GET api/<AirPortController>/5
@@ -47,8 +54,10 @@ namespace FinalProjectServer.Controllers
 
         // POST api/<AirPortController>
         [HttpPost]
-        public void Post(Flight value)
+        [Route("AddLandingFlight")]
+        public void Post(Flight flight)
         {
+            airPortLogic.AddNewFlight(flight);
         }
 
         // PUT api/<AirPortController>/5

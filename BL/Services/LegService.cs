@@ -21,15 +21,15 @@ namespace BL.Services
 
         private void StationsStarter()
         {
-            Leg station1 = new Leg { Id = 1, NextLegNumber = 2, Number = 1, StationWatingTime = 1 };
-            Leg station2 = new Leg { Id = 2, NextLegNumber = 3, Number = 2, StationWatingTime = 1 };
-            Leg station3 = new Leg { Id = 3, NextLegNumber = 4, Number = 3, StationWatingTime = 1 };
-            Leg station4 = new Leg { Id = 4, NextLegNumber = 5, Number = 4, StationWatingTime = 5 };
-            Leg station5 = new Leg { Id = 5, NextLegNumber = 6, Number = 5, StationWatingTime = 5 };
-            Leg station6 = new Leg { Id = 6, NextLegNumber = 8, Number = 6, StationWatingTime = 10 };
-            Leg station7 = new Leg { Id = 7, NextLegNumber = 8, Number = 7, StationWatingTime = 10 };
-            Leg station8 = new Leg { Id = 8, NextLegNumber = 4, Number = 8, StationWatingTime = 5 };
-            Leg station9 = new Leg { Id = 9, NextLegNumber = 4, Number = 9, StationWatingTime = 5 };
+            Leg station1 = new Leg { Id = 1, NextLegNumber = 2, Number = 1, StationWatingTime = 3 };
+            Leg station2 = new Leg { Id = 2, NextLegNumber = 3, Number = 2, StationWatingTime = 3 };
+            Leg station3 = new Leg { Id = 3, NextLegNumber = 4, Number = 3, StationWatingTime = 3 };
+            Leg station4 = new Leg { Id = 4, NextLegNumber = 5, Number = 4, StationWatingTime = 3 };
+            Leg station5 = new Leg { Id = 5, NextLegNumber = 6, Number = 5, StationWatingTime = 3 };
+            Leg station6 = new Leg { Id = 6, NextLegNumber = 8, Number = 6, StationWatingTime = 5 };
+            Leg station7 = new Leg { Id = 7, NextLegNumber = 8, Number = 7, StationWatingTime = 5 };
+            Leg station8 = new Leg { Id = 8, NextLegNumber = 4, Number = 8, StationWatingTime = 3 };
+            Leg station9 = new Leg { Id = 9, NextLegNumber = 4, Number = 9, StationWatingTime = 2 };
 
            Stations.Add(station1);
            Stations.Add(station2);

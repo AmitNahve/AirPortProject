@@ -1,13 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { SimulatorUI } from './Components/SimulatorUI';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"/>
-      
-    </div>
+  <SimulatorUI/>
   );
 }
 

@@ -34,17 +34,13 @@ namespace BL
         private async Task StartFlight(IFlight flight)
         {
             flights.Add(flight);
+            Console.WriteLine(flights.Count);
             var stations = legService.GetLegs();
             // var path = new FlightRoute();
-            if (flight.Target == Target.Landing)
-            {
+           
                 await StartLanding(stations, flight);
-            }
-            else
-            {
-                await StartDeparture(stations, flight);
-            }
-
+            flights.Remove(flight);
+          
 
         }
 
@@ -75,6 +71,8 @@ namespace BL
             var leg5 = stations.FirstOrDefault(s => s.Number == 5);
             var leg6 = stations.FirstOrDefault(s => s.Number == 6);
             var leg7 = stations.FirstOrDefault(s => s.Number == 7);
+            var leg8 = stations.FirstOrDefault(s => s.Number == 8);
+            var leg9 = stations.FirstOrDefault(s => s.Number == 9);
             await RunInStation(flight, leg1);
             await RunInStation(flight, leg2);
             await RunInStation(flight, leg3);
@@ -82,7 +80,10 @@ namespace BL
             await RunInStation(flight, leg5);
             ICombinedStations combinedStations = new CombinedStations(new List<ILeg> { leg6!, leg7! });
             await combinedStations.VisitStation(flight);
-            Console.WriteLine($"flight ended. Flight Code:{flight.FlightCode}");
+            await RunInStation(flight, leg8);
+            await RunInStation(flight, leg4);
+            await RunInStation(flight, leg9);
+            Console.WriteLine($"flight {flight.Target}. Flight Code:{flight.FlightCode} ");
         }
 
         public async Task RunInStation(IFlight flight, ILeg? leg)
@@ -95,11 +96,17 @@ namespace BL
 
 
 
-        public AirPortStatus GetStatus()
+        public List<LegStatus> GetStatus()
         {
             var status = new AirPortStatus();
             status.Stations.AddRange(legService.GetStatus());
-            return status;
+            return status.Stations;
+        }
+
+        public List<IFlight> GetFlights()
+        {
+            Console.WriteLine(flights.Count);
+            return flights;
         }
     }
 }

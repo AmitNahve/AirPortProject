@@ -26,15 +26,16 @@ namespace Models
         {
             var station = Stations?.FirstOrDefault(s => s.Flight == null);
             await RunInStation(flight, station!);
-            
+
         }
-            public async Task RunInStation(IFlight flight, ILeg leg)
-            {
-                await leg!.EnterStation(flight);
-                Console.WriteLine($" flight in station: {leg!.Number},Flight Code:{leg!.Flight!.FlightCode}");
-                await leg.Visit();
-                leg.ExitStation();
-            }
+        public async Task RunInStation(IFlight flight, ILeg leg)
+        {
+            await leg!.EnterStation(flight);
+            Console.WriteLine($" flight in station: {leg!.Number},Flight Code:{leg!.Flight!.FlightCode}");
+            await leg.Visit();
+            flight.Target = Target.Departure;
+            leg.ExitStation();
+        }
 
 
     }

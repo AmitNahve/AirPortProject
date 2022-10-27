@@ -1,9 +1,14 @@
 
-export  type  Flight={
+export enum Target{
+    Landing = 0,
+    Departure=1
+}
+
+export type FlightModel={
     id: number;
-    code: string;
+    flightCode: string;
     passengersCount: number;
-    target: string;
+    target: Target;
     //leg: Leg;
  
     

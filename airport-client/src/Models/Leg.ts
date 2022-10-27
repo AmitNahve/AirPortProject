@@ -1,9 +1,9 @@
 export type Leg ={
-    id: number;
-    legNumber: number;
-    stationWatingTime: number;
-    //flightInStation:Flight
-    target: string;
+    legId: number;
+    legNumber?: number;
+    stationWatingTime?: number;
+    flightCode:string;
+    target?: string;
     //leg: Leg;
    
 }
