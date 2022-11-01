@@ -6,6 +6,7 @@ import '../App.css';
 import { Leg } from "../Models/Leg";
 import { FlightModel } from "../Models/FlightModel";
 import { getAllFlights, getAllLegs } from "../Services/airportService";
+import { Log } from "./Log";
 
 
 
@@ -43,5 +44,8 @@ export const SimulatorUI: FC = (props) => {
         <div className="first-row"> <div className="row">{stations[0]}{stations[1]}{stations[2]}{stations[3]}</div>{stations[8]}</div>
         <div className="secondary-row">{stations[7]}{stations[4]}</div>
         <div className="third-row">{stations[5]}{stations[6]}</div>
+        <div>
+            <Log></Log>
+        </div>
     </div>
 }
