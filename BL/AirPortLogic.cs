@@ -1,7 +1,7 @@
 ﻿using BL.Services;
-using Contract;
 using Models;
 using Shared;
+using Shared.ContextRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,7 @@ namespace BL
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ILegService legService;
+        private readonly List<ILog> logList = new();
 
 
         private readonly List<IFlight> flights = new();
@@ -34,6 +35,7 @@ namespace BL
         private async Task StartFlight(IFlight flight)
         {
             flights.Add(flight);
+            logList.Add(new Log{ Flight = flight , Leg = flight.Leg, Time = DateTime.Now});
             Console.WriteLine(flights.Count);
             var stations = legService.GetLegs();
             // var path = new FlightRoute();
@@ -89,6 +91,7 @@ namespace BL
         public async Task RunInStation(IFlight flight, ILeg? leg)
         {
             await leg!.EnterStation(flight);
+            logList.Add(new Log { Flight = flight, Leg = flight.Leg, Time = DateTime.Now });
             Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight!.FlightCode}");
             await leg.Visit();
             leg.ExitStation();
@@ -107,6 +110,12 @@ namespace BL
         {
             Console.WriteLine(flights.Count);
             return flights;
+        }
+
+        public List<ILog> GetLog()
+        {
+            Console.WriteLine(logList.Count);
+            return logList;
         }
     }
 }

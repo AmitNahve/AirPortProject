@@ -9,7 +9,6 @@
       "FinalProjectServer/1.0.0": {
         "dependencies": {
           "BL": "1.0.0",
-          "Contract": "1.0.0",
           "Entity": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
@@ -319,7 +318,6 @@
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
-      "Microsoft.NETCore.Targets/1.1.3": {},
       "Microsoft.OpenApi/1.2.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -567,12 +565,6 @@
         }
       },
       "System.Memory/4.5.4": {},
-      "System.Runtime/4.3.1": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.NETCore.Targets": "1.1.3"
-        }
-      },
       "System.Runtime.Caching/4.7.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.7.0"
@@ -666,27 +658,19 @@
       },
       "BL/1.0.0": {
         "dependencies": {
-          "Contract": "1.0.0"
+          "Models": "1.0.0",
+          "Shared": "1.0.0"
         },
         "runtime": {
           "BL.dll": {}
         }
       },
-      "Contract/1.0.0": {
-        "dependencies": {
-          "Models": "1.0.0",
-          "System.Runtime": "4.3.1"
-        },
-        "runtime": {
-          "Contract.dll": {}
-        }
-      },
       "Entity/1.0.0": {
         "dependencies": {
-          "Contract": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
-          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.10"
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.10",
+          "Models": "1.0.0"
         },
         "runtime": {
           "Entity.dll": {}
@@ -930,13 +914,6 @@
       "path": "microsoft.netcore.platforms/3.1.0",
       "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
     },
-    "Microsoft.NETCore.Targets/1.1.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
-      "path": "microsoft.netcore.targets/1.1.3",
-      "hashPath": "microsoft.netcore.targets.1.1.3.nupkg.sha512"
-    },
     "Microsoft.OpenApi/1.2.3": {
       "type": "package",
       "serviceable": true,
@@ -1063,13 +1040,6 @@
       "path": "system.memory/4.5.4",
       "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
-    "System.Runtime/4.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-abhfv1dTK6NXOmu4bgHIONxHyEqFjW8HwXPmpY9gmll+ix9UNo4XDcmzJn6oLooftxNssVHdJC1pGT9jkSynQg==",
-      "path": "system.runtime/4.3.1",
-      "hashPath": "system.runtime.4.3.1.nupkg.sha512"
-    },
     "System.Runtime.Caching/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -1148,11 +1118,6 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "BL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Contract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,5 +1,6 @@
 ﻿using Models;
 using Shared;
+using Shared.ContextRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,14 @@ namespace BL.Services
 {
     public class LegService : ILegService
     {
+        IUnitOfWork unitOfWork;
+        
 
         public List<ILeg> Stations = new List<ILeg>(); 
-        public LegService()
+        public LegService(IUnitOfWork unitOfWork)
         {
 
+            this.unitOfWork = unitOfWork;
             StationsStarter();
 
         }
@@ -40,6 +44,16 @@ namespace BL.Services
            Stations.Add(station7);
            Stations.Add(station8);
            Stations.Add(station9);
+            //unitOfWork.Legs.Create(station1);
+            //unitOfWork.Legs.Create(station2);
+            //unitOfWork.Legs.Create(station3);
+            //unitOfWork.Legs.Create(station4);
+            //unitOfWork.Legs.Create(station5);
+            //unitOfWork.Legs.Create(station6);
+            //unitOfWork.Legs.Create(station7);
+            //unitOfWork.Legs.Create(station8);
+            //unitOfWork.Legs.Create(station9);
+            //unitOfWork.Complete();
         }
 
         //        public void MoveFlightsInStations(Flight flight)// list of flights

@@ -1,4 +1,4 @@
-﻿using Contract;
+﻿using Shared.ContextRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace Entity.Repositories
 
         public void Delete(T entity) => context.Set<T>().Remove(entity);
 
-        public T Get(int id) => context.Set<T>().Find(id);
+        public T Get(int id) => context.Set<T>().Find(id)!;
 
 
         public void Update(T entity) => context.Set<T>().Update(entity);

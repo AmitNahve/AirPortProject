@@ -8,5 +8,6 @@ namespace Shared
 
         List<LegStatus> GetStatus();
         List<IFlight> GetFlights();
+        List<ILog> GetLog();
     }
 }

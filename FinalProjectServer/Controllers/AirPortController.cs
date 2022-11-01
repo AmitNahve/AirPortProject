@@ -41,8 +41,17 @@ namespace FinalProjectServer.Controllers
         [Route("GetFlights")]
         public List<IFlight> GetFlights()
         {
+            
           
             return airPortLogic.GetFlights();
+        }
+        [HttpGet]
+        [Route("GetLog")]
+        public List<ILog> GetLog()
+        {
+            
+          
+            return airPortLogic.GetLog();
         }
 
         // GET api/<AirPortController>/5

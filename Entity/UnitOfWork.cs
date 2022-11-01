@@ -1,5 +1,5 @@
-﻿using Contract;
-using Entity.Repositories;
+﻿using Entity.Repositories;
+using Shared.ContextRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

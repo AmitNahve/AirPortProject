@@ -1,10 +1,10 @@
 
 using BL;
 using BL.Services;
-using Contract;
 using Entity;
 using Microsoft.EntityFrameworkCore;
 using Shared;
+using Shared.ContextRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 

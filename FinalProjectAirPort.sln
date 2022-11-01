@@ -9,13 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirPlaneSimulator", "AirPla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{EC381DD8-C7E2-45F9-8BEB-689F876810BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contract", "Contract\Contract.csproj", "{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{1E5BE72D-52E0-4F15-8B7F-F113C45A289D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{70772950-3A46-45FA-BD09-4A7D2ED93ECB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{532C9974-53DB-4191-8F8E-D54F0EE2F9EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{EC381DD8-C7E2-45F9-8BEB-689F876810BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC381DD8-C7E2-45F9-8BEB-689F876810BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC381DD8-C7E2-45F9-8BEB-689F876810BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A4DE733-8869-4D20-ACB1-9575A9B1AE25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E5BE72D-52E0-4F15-8B7F-F113C45A289D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E5BE72D-52E0-4F15-8B7F-F113C45A289D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E5BE72D-52E0-4F15-8B7F-F113C45A289D}.Release|Any CPU.ActiveCfg = Release|Any CPU
