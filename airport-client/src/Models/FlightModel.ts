@@ -1,3 +1,4 @@
+import { Leg } from "./Leg";
 
 export enum Target {
     Landing = 0,

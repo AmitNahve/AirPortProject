@@ -51,7 +51,7 @@ export const Log: FC = (props) => {
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                             <TableCell component="th" scope="row"> {row.leg.legNumber}</TableCell>
-                            <TableCell align="right">{row.time.toTimeString()}</TableCell>
+                            <TableCell align="right" >{row.time.toString()}</TableCell>
                             <TableCell align="right">{row.flight.flightCode}</TableCell>
                         </TableRow>
                     ))}

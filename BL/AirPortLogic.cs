@@ -35,7 +35,7 @@ namespace BL
         private async Task StartFlight(IFlight flight)
         {
             flights.Add(flight);
-            logList.Add(new Log{ Flight = flight , Leg = flight.Leg, Time = DateTime.Now});
+            //logList.Add(new Log{ Flight = flight , Leg = flight.Leg, Time = DateTime.Now});
             Console.WriteLine(flights.Count);
             var stations = legService.GetLegs();
             // var path = new FlightRoute();
@@ -91,8 +91,8 @@ namespace BL
         public async Task RunInStation(IFlight flight, ILeg? leg)
         {
             await leg!.EnterStation(flight);
-            logList.Add(new Log { Flight = flight, Leg = flight.Leg, Time = DateTime.Now });
-            Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight!.FlightCode}");
+            logList.Add(new Log { Flight = flight, Leg = leg, Time = DateTime.Now });
+            Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight?.FlightCode}");
             await leg.Visit();
             leg.ExitStation();
         }
@@ -114,7 +114,7 @@ namespace BL
 
         public List<ILog> GetLog()
         {
-            Console.WriteLine(logList.Count);
+            Console.WriteLine($"Log list{logList.Count}");
             return logList;
         }
     }
