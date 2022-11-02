@@ -52,11 +52,11 @@ namespace BL
         {
 
 
-            var leg6 = stations.FirstOrDefault(s => s.Number == 6);
-            var leg7 = stations.FirstOrDefault(s => s.Number == 7);
-            var leg8 = stations.FirstOrDefault(s => s.Number == 8);
-            var leg4 = stations.FirstOrDefault(s => s.Number == 4);
-            var leg9 = stations.FirstOrDefault(s => s.Number == 9);
+            var leg6 = stations.FirstOrDefault(s => s.LegNumber == 6);
+            var leg7 = stations.FirstOrDefault(s => s.LegNumber == 7);
+            var leg8 = stations.FirstOrDefault(s => s.LegNumber == 8);
+            var leg4 = stations.FirstOrDefault(s => s.LegNumber == 4);
+            var leg9 = stations.FirstOrDefault(s => s.LegNumber == 9);
             ICombinedStations combinedStations = new CombinedStations(new List<ILeg> { leg6!, leg7! });
             await combinedStations.VisitStation(flight);
             await RunInStation(flight, leg8);
@@ -66,15 +66,15 @@ namespace BL
         }
         private async Task StartLanding(IEnumerable<ILeg> stations, IFlight flight)
         {
-            var leg1 = stations.FirstOrDefault(s => s.Number == 1);
-            var leg2 = stations.FirstOrDefault(s => s.Number == 2);
-            var leg3 = stations.FirstOrDefault(s => s.Number == 3);
-            var leg4 = stations.FirstOrDefault(s => s.Number == 4);
-            var leg5 = stations.FirstOrDefault(s => s.Number == 5);
-            var leg6 = stations.FirstOrDefault(s => s.Number == 6);
-            var leg7 = stations.FirstOrDefault(s => s.Number == 7);
-            var leg8 = stations.FirstOrDefault(s => s.Number == 8);
-            var leg9 = stations.FirstOrDefault(s => s.Number == 9);
+            var leg1 = stations.FirstOrDefault(s => s.LegNumber == 1);
+            var leg2 = stations.FirstOrDefault(s => s.LegNumber == 2);
+            var leg3 = stations.FirstOrDefault(s => s.LegNumber == 3);
+            var leg4 = stations.FirstOrDefault(s => s.LegNumber == 4);
+            var leg5 = stations.FirstOrDefault(s => s.LegNumber == 5);
+            var leg6 = stations.FirstOrDefault(s => s.LegNumber == 6);
+            var leg7 = stations.FirstOrDefault(s => s.LegNumber == 7);
+            var leg8 = stations.FirstOrDefault(s => s.LegNumber == 8);
+            var leg9 = stations.FirstOrDefault(s => s.LegNumber == 9);
             await RunInStation(flight, leg1);
             await RunInStation(flight, leg2);
             await RunInStation(flight, leg3);
@@ -92,7 +92,7 @@ namespace BL
         {
             await leg!.EnterStation(flight);
             logList.Add(new Log { Flight = flight, Leg = leg, Time = DateTime.Now });
-            Console.WriteLine($" flight in station: {leg.Number},Flight Code:{leg.Flight?.FlightCode}");
+            Console.WriteLine($" flight in station: {leg.LegNumber},Flight Code:{leg.Flight?.FlightCode}");
             await leg.Visit();
             leg.ExitStation();
         }

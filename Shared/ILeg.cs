@@ -8,7 +8,7 @@ namespace Shared
         int? FlightId { get; set; }
         int Id { get; set; }
         int NextLegNumber { get; set; }
-        int Number { get; set; }
+        int LegNumber { get; set; }
         int StationWatingTime { get; set; }
         Target Target { get; set; }
         Task EnterStation(IFlight flight);

@@ -33,7 +33,7 @@ namespace Models
             foreach (var station in flightRoute.GetNextStation())
             {
                 station.EnterStation(this);
-                Console.WriteLine($" flight in station: {station.Number},Flight Code:{station.Flight?.FlightCode}");
+                Console.WriteLine($" flight in station: {station.LegNumber},Flight Code:{station.Flight?.FlightCode}");
                 Thread.Sleep(station.StationWatingTime * 1000);
                 station.ExitStation();
             }

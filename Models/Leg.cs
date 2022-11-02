@@ -12,7 +12,7 @@ namespace Models
     {
         //[Key]
         public int Id { get; set; }
-        public int Number { get; set; }
+        public int LegNumber { get; set; }
         //[ForeignKey("Flight")]
         public int? FlightId { get; set; }
         public IFlight? Flight { get; set; }
