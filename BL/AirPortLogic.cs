@@ -3,6 +3,7 @@ using Models;
 using Shared;
 using Shared.ContextRepository;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace BL
 
 
         private readonly List<IFlight> flights = new();
+        private readonly ConcurrentBag<IFlight> flights2 = new();// thread safe
         public AirPortLogic(IUnitOfWork unitOfWork, ILegService legService)
         {
             this.unitOfWork = unitOfWork;
@@ -66,7 +68,7 @@ namespace BL
         }
         private async Task StartLanding(IEnumerable<ILeg> stations, IFlight flight)
         {
-            var leg1 = stations.FirstOrDefault(s => s.LegNumber == 1);
+            var leg1 = getStationById(stations, 1);
             var leg2 = stations.FirstOrDefault(s => s.LegNumber == 2);
             var leg3 = stations.FirstOrDefault(s => s.LegNumber == 3);
             var leg4 = stations.FirstOrDefault(s => s.LegNumber == 4);
@@ -86,6 +88,11 @@ namespace BL
             await RunInStation(flight, leg4);
             await RunInStation(flight, leg9);
             Console.WriteLine($"flight {flight.Target}. Flight Code:{flight.FlightCode} ");
+        }
+
+        private static ILeg? getStationById(IEnumerable<ILeg> stations, int id)
+        {
+            return stations.FirstOrDefault(s => s.LegNumber == id);
         }
 
         public async Task RunInStation(IFlight flight, ILeg? leg)

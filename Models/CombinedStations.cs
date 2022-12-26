@@ -24,10 +24,22 @@ namespace Models
         }
         private async Task VisitAvailableLeg(IFlight flight)
         {
-            var station = Stations?.FirstOrDefault(s => s.Flight == null);
+            var stationTask = await Task.WhenAny(Stations.Select( EnterStationAsync ));
+            var station = stationTask.Result;
+                //Stations?.FirstOrDefault(s => s.Flight == null);
             await RunInStation(flight, station!);
 
         }
+
+        private async Task<ILeg>  EnterStationAsync(ILeg leg )
+        {
+            await Task.Run(() =>
+            {
+                while (leg.Flight == null) ;
+            });
+            return leg;
+        }
+
         public async Task RunInStation(IFlight flight, ILeg leg)
         {
             await leg!.EnterStation(flight);

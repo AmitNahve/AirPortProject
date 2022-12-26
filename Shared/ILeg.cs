@@ -9,7 +9,7 @@ namespace Shared
         int Id { get; set; }
         int NextLegNumber { get; set; }
         int LegNumber { get; set; }
-        int StationWatingTime { get; set; }
+        TimeSpan StationWatingTime { get; set; }
         Target Target { get; set; }
         Task EnterStation(IFlight flight);
         void ExitStation();

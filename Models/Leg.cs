@@ -17,7 +17,7 @@ namespace Models
         public int? FlightId { get; set; }
         public IFlight? Flight { get; set; }
         public Target Target { get; set; }
-        public int StationWatingTime { get; set; }
+        public TimeSpan StationWatingTime { get; set; }
         public int NextLegNumber { get; set; }
         SemaphoreSlim Gate { get; set; } = new SemaphoreSlim(0);
         public async Task EnterStation(IFlight flight)
@@ -32,7 +32,7 @@ namespace Models
 
         public async Task Visit()
         {
-           await Task.Delay(this.StationWatingTime * 1000);
+           await Task.Delay(this.StationWatingTime );
         }
         public void ExitStation()
         {

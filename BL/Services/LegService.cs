@@ -25,15 +25,15 @@ namespace BL.Services
 
         private void StationsStarter()
         {
-            Leg station1 = new Leg { Id = 1, NextLegNumber = 2, LegNumber = 1, StationWatingTime = 3 };
-            Leg station2 = new Leg { Id = 2, NextLegNumber = 3, LegNumber = 2, StationWatingTime = 3 };
-            Leg station3 = new Leg { Id = 3, NextLegNumber = 4, LegNumber = 3, StationWatingTime = 3 };
-            Leg station4 = new Leg { Id = 4, NextLegNumber = 5, LegNumber = 4, StationWatingTime = 3 };
-            Leg station5 = new Leg { Id = 5, NextLegNumber = 6, LegNumber = 5, StationWatingTime = 3 };
-            Leg station6 = new Leg { Id = 6, NextLegNumber = 8, LegNumber = 6, StationWatingTime = 5 };
-            Leg station7 = new Leg { Id = 7, NextLegNumber = 8, LegNumber = 7, StationWatingTime = 5 };
-            Leg station8 = new Leg { Id = 8, NextLegNumber = 4, LegNumber = 8, StationWatingTime = 3 };
-            Leg station9 = new Leg { Id = 9, NextLegNumber = 4, LegNumber = 9, StationWatingTime = 2 };
+            Leg station1 = new Leg { Id = 1, NextLegNumber = 2, LegNumber = 1, StationWatingTime = TimeSpan.FromSeconds(3) };
+            Leg station2 = new Leg { Id = 2, NextLegNumber = 3, LegNumber = 2, StationWatingTime = TimeSpan.FromSeconds(3) };
+            Leg station3 = new Leg { Id = 3, NextLegNumber = 4, LegNumber = 3, StationWatingTime = TimeSpan.FromSeconds(3) };
+            Leg station4 = new Leg { Id = 4, NextLegNumber = 5, LegNumber = 4, StationWatingTime = TimeSpan.FromSeconds(3) };
+            Leg station5 = new Leg { Id = 5, NextLegNumber = 6, LegNumber = 5, StationWatingTime = TimeSpan.FromSeconds(3) };
+            Leg station6 = new Leg { Id = 6, NextLegNumber = 8, LegNumber = 6, StationWatingTime = TimeSpan.FromSeconds(5) };
+            Leg station7 = new Leg { Id = 7, NextLegNumber = 8, LegNumber = 7, StationWatingTime = TimeSpan.FromSeconds(5) };
+            Leg station8 = new Leg { Id = 8, NextLegNumber = 4, LegNumber = 8, StationWatingTime = TimeSpan.FromSeconds(3) };
+            Leg station9 = new Leg { Id = 9, NextLegNumber = 4, LegNumber = 9, StationWatingTime = TimeSpan.FromSeconds(2) };
 
            Stations.Add(station1);
            Stations.Add(station2);
